@@ -10,8 +10,6 @@ Key_To_Exit () {
 	read -rsp $' ... \e[92mPress any key\e[0m to Exit ... \n' -n1 key
 	exit
 }
-config_of () {
-	echo -e "############  \e[96mConfiguration of \e[0m \e[93m$1\e[0m  ############"
 ###################################################
 echo "" 
 echo -e "############\e[1;96m Installing Various Openstack-Packages for Controller Node\e[0m ############"

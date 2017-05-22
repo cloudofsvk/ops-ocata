@@ -1,5 +1,5 @@
 #!/bin/bash
-###### Openstack-Ocata-Neutron_VXLAN-Ubuntu-16.04-SVK-GIT-MaY-2017 #######
+###### Openstack-Ocata-Neutron_VXLAN-Ubuntu-16.04-SVK-GIT-MaY-2017 ####### 
 ###################################################
 #Controller-Node-Installation#
 ###################################################  
@@ -31,7 +31,7 @@ Complete_Reboot () {
 	echo -e "############  \e[92m---Installation Completed----\e[0m  ############"
 	echo -e "##### ...\e[93m Access the dashboard using a web browser: \e[0m--- \e[96mhttp://$con_ip/horizon\e[0m ...#####"
 	sleep 2
-	read -rsp $'\e[1;97;45m     ...Press any key to Exit...and...Reboot The Sever After Exit...     \e[0m\n' -n1 key
+	read -rsp $'\e[1;97;44m     ...Press any key to Exit...and...Reboot The Server After Exit...     \e[0m\n' -n1 key
 }
 ###################################################
 echo "" 
@@ -211,11 +211,11 @@ export OS_IDENTITY_API_VERSION=3
 export OS_IMAGE_API_VERSION=2
 export OS_VOLUME_API_VERSION=2'>/root/demorc
 sleep 3
-echo -e "#########\e[95m openstack token issue \e[0m#########"
+echo -e "#########\e[96m openstack token issue \e[0m#########"
 openstack token issue
-echo -e "#########\e[95m openstack user list \e[0m#########"
+echo -e "#########\e[96m openstack user list \e[0m#########"
 openstack user list
-echo -e "#########\e[95m openstack project list \e[0m#########"
+echo -e "#########\e[96m openstack project list \e[0m#########"
 openstack project list
 sleep 3
 echo -e "#########\e[96m Creating User,Service,Endpoint for Various Openstack Services \e[0m#########"
@@ -353,10 +353,6 @@ sleep 2
 #NEUTRON Installation 
 ##########################################################
 Openstack_Service_Inst NOVA NEUTRON
-sleep 1
-cp /etc/sysctl.conf /etc/sysctl.conf.$tday
-sleep 1
-cat controller-conf/sysctl.conf  > /etc/sysctl.conf 
 sleep 1
 cp /etc/neutron/neutron.conf /etc/neutron/neutron.conf.$tday
 sleep 1
