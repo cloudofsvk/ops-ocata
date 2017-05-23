@@ -1,7 +1,7 @@
 #!/bin/bash
 ###### Openstack-Ocata-Neutron_VXLAN-Ubuntu-16.04-SVK-GIT-MaY-2017 ####### 
 ###################################################
-#Controller-Node-Installation#
+# Controller-Node-Configuration #
 ###################################################   
 Node_Inst_Start () {
 	echo -e  "######\e[92m Starting ---- $1 ---- Installation \e[0m######"
@@ -28,7 +28,7 @@ Openstack_Service_Inst () {
 	echo -e "############  \e[96m-----Configuring---$2-----\e[0m  ############"
 }
 Complete_Reboot () {
-	echo -e "############  \e[92m---Installation Completed----\e[0m  ############"
+	echo -e "############  \e[92m---Configuration Completed----\e[0m  ############"
 	echo -e "##### ...\e[93m Access the dashboard using a web browser: \e[0m--- \e[96mhttp://$con_ip/horizon\e[0m ...#####"
 	sleep 2
 	read -rsp $'\e[1;97;44m     ...Press any key to Exit...and...Reboot The Server After Exit...     \e[0m\n' -n1 key
@@ -133,7 +133,7 @@ EOF
 sleep 5
 echo -e " \e[92m########## --------Created DB for Various OpenStack Services---------##########\e[0m"
 ##########################################################
-#KEYSTONE Installation
+#KEYSTONE Configuration
 ##########################################################
 echo -e " ##########\e[96m --------Configuring----Keystone-------- \e[0m##########"
 sleep 2
@@ -295,7 +295,7 @@ sleep 3
 openstack service list
 sleep 3
 ##########################################################
-#GLANCE Installation   
+#GLANCE Configuration 
 ##########################################################
 Openstack_Service_Inst KEYSTONE GLANCE
 sleep 1
@@ -313,7 +313,7 @@ sleep 3
 rm -f /var/lib/glance/glance.sqlite
 
 ##########################################################
-#NOVA Installation    
+#NOVA Configuration 
 ##########################################################
 Openstack_Service_Inst GLANCE NOVA
 sleep 1
@@ -348,7 +348,7 @@ openstack compute service list
 sleep 2
 
 ##########################################################
-#NEUTRON Installation 
+#NEUTRON Configuration  
 ##########################################################
 Openstack_Service_Inst NOVA NEUTRON
 sleep 1
@@ -376,7 +376,7 @@ echo -e "#########\e[95m openstack network agent list \e[0m#########"
 openstack network agent list 
 sleep 3
 ##########################################################
-#HORIZON Installation
+#HORIZON Configuration 
 ##########################################################
 Openstack_Service_Inst NEUTRON HorizoN
 sleep 1
@@ -389,7 +389,7 @@ sleep 3
 systemctl restart apache2 memcached 
 sleep 3
 ##########################################################
-#CINDER Installation 
+#CINDER Configuration 
 ##########################################################
 Openstack_Service_Inst HorizoN CINDER
 sleep 1
