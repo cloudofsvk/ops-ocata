@@ -4,14 +4,13 @@
 # Controller-Node-Configuration #
 ###################################################   
 Node_Inst_Start () {
-	echo -e  "######\e[92m Starting ---- $1 ---- Installation \e[0m######"
-	echo -e "#####\e[31m Update and Upgrade the Server Before starting the Installation \e[0m#####"
-	echo -e "#####\e[31m Attach Second HDD to configure Cinder-Volume During Installation \e[0m#####"
+	echo -e  "######\e[92m Starting ---- $1 ---- Configuration \e[0m######"
+	echo -e "#####\e[31m Attach Second HDD to configure Cinder-Volume During Configuration \e[0m#####"
 	sleep 2
-	read -rsp $' ... If Updated \e[92mPress any key\e[0m to Continue OR \e[31mCTRL+C\e[0m to Exit Installation ... \n' -n1 key
+	read -rsp $' ... \e[92mPress any key\e[0m to Continue OR \e[31mCTRL+C\e[0m to Exit Configuration ... \n' -n1 key
 }
 Key_To_Start () {
-	read -rsp $' ... \e[92mPress any key\e[0m to Continue OR \e[31mCTRL+C\e[0m to Exit Installation ... \n' -n1 key
+	read -rsp $' ... \e[92mPress any key\e[0m to Continue OR \e[31mCTRL+C\e[0m to Exit Configuration ... \n' -n1 key
 }
 Key_To_Exit () {
 	read -rsp $' ... \e[92mPress any key\e[0m to Exit ... \n' -n1 key
