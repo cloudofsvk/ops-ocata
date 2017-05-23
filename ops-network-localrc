@@ -5,7 +5,7 @@
 # Management-NW/SubnetMask (e.g, 200.0.0.0/24)
 # External Bridge ,Device which has Manual Settings/No-IP(e.g, eth1/eth2..etc)
 #######################
-con_ip=200.0.0.66
-net_ip=200.0.0.67
-com_ip=200.0.0.68
+con_ip=200.0.0.33
+net_ip=200.0.0.34
+com_ip=200.0.0.35
 extdev=eth1

@@ -43,7 +43,6 @@ else
 	sleep 3 
 	exit 1 
 fi
-Key_To_Start
 tday=$(date +%d-%b-%Y-%H%M)
 source ops-network-localrc
 sleep 2
@@ -52,7 +51,6 @@ sed -i '/network\|controller\|compute/d' /etc/hosts
 echo -e " ##### \e[93mAdding OPenstack-Host-IP'S to /etc/hosts file\e[0m ##### "
 echo -e "$con_ip 	controller\n$net_ip 	network\n$com_ip 	compute\n " >> /etc/hosts
 echo -e '###### \e[92mStarting Installation\e[0m ######'
-Key_To_Start
 sleep 2
 ###################################################
 ######Enable IP Forwarding#######
