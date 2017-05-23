@@ -1,16 +1,15 @@
 #!/bin/bash
 ###### Openstack-Ocata-Neutron_VXLAN-Ubuntu-16.04-SVK-GIT-MaY-2017 #######
 ###################################################
-# Compute-Node-Installation #
+# Compute-Node-Configuration #
 ###################################################  
 Node_Inst_Start () {
-	echo -e  "######\e[92m Starting ---- $1 ---- Installation \e[0m######"
-	echo -e "#####\e[31m Update and Upgrade the Server Before starting the Installation \e[0m#####"
+	echo -e  "######\e[92m Starting ---- $1 ---- Configuration \e[0m######"
 	sleep 2
-	read -rsp $' ... If Updated \e[92mPress any key\e[0m to Continue OR \e[31mCTRL+C\e[0m to Exit Installation ... \n' -n1 key
+	read -rsp $' ... \e[92mPress any key\e[0m to Continue OR \e[31mCTRL+C\e[0m to Exit Configuration ... \n' -n1 key
 } 
 Key_To_Start () {
-	read -rsp $' ... \e[92mPress any key\e[0m to Continue OR \e[31mCTRL+C\e[0m to Exit Installation ... \n' -n1 key
+	read -rsp $' ... \e[92mPress any key\e[0m to Continue OR \e[31mCTRL+C\e[0m to Exit Configuration ... \n' -n1 key
 }
 Key_To_Exit () {
 	read -rsp $' ... \e[92mPress any key\e[0m to Exit ... \n' -n1 key
@@ -27,7 +26,7 @@ Openstack_Service_Inst () {
 	echo -e "############  \e[96m-----Configuring---$2-----\e[0m  ############"
 }
 Complete_Reboot () {
-	echo -e "############  \e[92m---Installation Completed----\e[0m  ############"
+	echo -e "############  \e[92m---Configuration Completed----\e[0m  ############"
 	echo -e "##### ...\e[93m Access the dashboard using a web browser: \e[0m--- \e[96mhttp://$con_ip/horizon\e[0m ...#####"
 	sleep 2
 	read -rsp $'\e[1;97;44m     ...Press any key to Exit...and...Reboot The Sever After Exit...     \e[0m\n' -n1 key
