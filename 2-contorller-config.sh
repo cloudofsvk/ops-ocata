@@ -2,7 +2,7 @@
 ###### Openstack-Ocata-Neutron_VXLAN-Ubuntu-16.04-SVK-GIT-MaY-2017 ####### 
 ###################################################
 #Controller-Node-Installation#
-###################################################  
+###################################################   
 Node_Inst_Start () {
 	echo -e  "######\e[92m Starting ---- $1 ---- Installation \e[0m######"
 	echo -e "#####\e[31m Update and Upgrade the Server Before starting the Installation \e[0m#####"
@@ -44,7 +44,6 @@ else
 	sleep 3 
 	exit 1 
 fi
-Key_To_Start
 tday=$(date +%d-%b-%Y-%H%M)
 source ops-controller-localrc
 sleep 2
@@ -53,7 +52,6 @@ sed -i '/network\|controller\|compute/d' /etc/hosts
 echo -e " ##### \e[93mSet OPenstack-Host-IP'S\e[0m ##### "
 echo -e "$con_ip 	controller\n$net_ip 	network\n$com_ip 	compute\n " >> /etc/hosts
 echo -e '###### \e[92mStarting Installation\e[0m ######'
-Key_To_Start
 sleep 2
 ###################################################
 ######Configuration of Chrony-NTP-Server#######
@@ -427,8 +425,8 @@ sleep 3
 echo -e 'for i in tgt cinder-{scheduler,volume}\ndo\nsystemctl $1 $i\ndone'>/root/cinder-ser.sh
 chmod +x /root/cinder-ser.sh
 sleep 3
-echo -e 'for i in $(ls /var/log/{nova,cinder,neutron}/*)\ndo\n>$i\ndone' > cleanlog.sh
-chmod +x cleanlog.sh
+echo -e 'for i in $(ls /var/log/{nova,cinder,neutron}/*)\ndo\n>$i\ndone' > /root/cleanlog.sh
+chmod +x /root/cleanlog.sh
 sleep 3
 echo -e 'grep -i error /var/log/{glance,cinder,nova,neutron}/*.log ' > /root/errlogcheck
 chmod +x /root/errlogcheck

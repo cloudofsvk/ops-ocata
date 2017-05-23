@@ -10,7 +10,7 @@ OPENSTACK_API_VERSIONS = {
     "volume": 2,
     "compute": 2,
 }
-OPENSTACK_KEYSTONE_MULTIDOMAIN_SUPPORT = True
+OPENSTACK_KEYSTONE_MULTIDOMAIN_SUPPORT = False
 OPENSTACK_KEYSTONE_DEFAULT_DOMAIN = 'default'
 LOCAL_PATH = os.path.dirname(os.path.abspath(__file__))
 SECRET_KEY = secret_key.generate_or_read_from_file('/var/lib/openstack-dashboard/secret_key')

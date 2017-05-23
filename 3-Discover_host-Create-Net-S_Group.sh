@@ -1,5 +1,5 @@
 #!/bin/bash
-##### Openstack-Ocata-Neutron_VXLAN-Ubuntu-16.04-SVK-GIT-Mar-2017 ######
+##### Openstack-Ocata-Neutron_VXLAN-Ubuntu-16.04-SVK-GIT-MaY-2017 ######
 Key_To_Start () {
 	read -rsp $' ... \e[92mPress any key\e[0m to Continue OR \e[31mCTRL+C\e[0m to Exit Installation ... \n' -n1 key
 }
@@ -11,7 +11,7 @@ read -rsp $'...\e[96mIf Completed OPENSTACK Installation and All Services are Wo
 ################################################
 #Discover-Compute-Hosts
 ################################################
-echo -e " ###### \e[1;96m Discover-Compute-Hosts \e[0m##########"
+echo -e " ###### \e[1;96m Discovering-Compute-Hosts \e[0m##########"
 sleep 2
 echo -e " ###### \e[1;95m nova-manage cell_v2 discover_hosts \e[0m##########"
 sleep 5
@@ -27,7 +27,7 @@ sleep 2
 ################################################
 #Create External Network
 ################################################
-echo -e " ###### \e[1;96m Create the External-Net For OpenStack \e[0m##########"
+echo -e " ###### \e[1;96m Creating External-Net For OpenStack \e[0m##########"
 source /root/adminrc
 echo -en "\e[93m External-Net DHCP-Pool Start IP \e[0m(e.g, 192.168.1.110) : "
 read ext_dhcp_start
@@ -96,7 +96,7 @@ openstack security group rule list Admin
 #For DEMO  Group/Tenant 
 ################################################
 
-echo -e "#####\e[96m   Ceating NetworK,Router,KeyPair and Sec-Groups  For DEMO Tenant   \e[0m#####"
+echo -e "#####\e[96m Ceating NetworK,Router,KeyPair and Sec-Groups  For DEMO Tenant   \e[0m#####"
 sleep 2
 Key_To_Start
 sleep 2
@@ -142,24 +142,24 @@ openstack security group rule list Demo
 ################################################
 #Create flavors
 ################################################
-echo -e " ###### \e[1;96m Create flavors \e[0m##########"
+echo -e " ###### \e[1;96m Creating flavors \e[0m##########"
 sleep 2
 source /root/adminrc
 sleep 2
 Key_To_Start
 sleep 2
 sleep 3
-echo -e " ###### \e[95m Create m1.nano flavor \e[0m##########"
+echo -e " ###### \e[95m Creating m1.nano flavor \e[0m##########"
 sleep 3
 openstack flavor create --id 0 --vcpus 1 --ram 256 --disk 5 m1.nano
 sleep 3
-echo -e " ###### \e[95m Create m1.micro flavor \e[0m##########"
+echo -e " ###### \e[95m Creating m1.micro flavor \e[0m##########"
 sleep 3
 openstack flavor create --id 1 --vcpus 1 --ram 512 --disk 5 m1.micro
-echo -e " ###### \e[95m Create m1.tiny flavor \e[0m##########"
+echo -e " ###### \e[95m Creating m1.tiny flavor \e[0m##########"
 sleep 3
 openstack flavor create --id 2 --vcpus 1 --ram 1024 --disk 10 m1.tiny
-echo -e " ###### \e[95m Create m1.small flavor \e[0m##########"
+echo -e " ###### \e[95m Creating m1.small flavor \e[0m##########"
 sleep 3
 openstack flavor create --id 3 --vcpus 1 --ram 2048 --disk 20 m1.small
 
